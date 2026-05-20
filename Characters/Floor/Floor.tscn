@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://rjsgbpi4778b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yywch"]
+size = Vector2(307, 99)
+
+[node name="Floor" type="StaticBody2D" unique_id=781487181]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1944805647]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_yywch")
+one_way_collision = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=76120518]
+
+[node name="Polygon2D" type="Polygon2D" parent="Sprite2D" unique_id=113406425]
+scale = Vector2(38.531246, 50.375004)
+color = Color(0.9999998, 0.5020927, 0.17864257, 1)
+polygon = PackedVector2Array(4, -1, 0, -1, -4, -1, -3, 1, 0, 1, 0, 1, 3, 1)

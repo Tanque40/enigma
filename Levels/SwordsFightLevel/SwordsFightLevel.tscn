@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://fceg8f0f0ibo"]
+
+[ext_resource type="Script" uid="uid://c306qqcl3thlv" path="res://Levels/SwordsFightLevel/swords_fight_level.gd" id="1_338kk"]
+[ext_resource type="PackedScene" uid="uid://rjsgbpi4778b" path="res://Characters/Floor/Floor.tscn" id="2_850o1"]
+[ext_resource type="PackedScene" uid="uid://bniqj6b5li5cy" path="res://Characters/Player/player.tscn" id="3_71ynm"]
+
+[node name="SwordsFightLevel" type="Node2D" unique_id=1489570143]
+script = ExtResource("1_338kk")
+
+[node name="Floor" parent="." unique_id=1187864736 instance=ExtResource("2_850o1")]
+position = Vector2(152, 701)
+
+[node name="Startposition" type="Marker2D" parent="." unique_id=2039153234]
+position = Vector2(37, 474)
+
+[node name="Player" parent="." unique_id=1594706307 instance=ExtResource("3_71ynm")]
+position = Vector2(-71, 444)

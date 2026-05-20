@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://bniqj6b5li5cy"]
+
+[ext_resource type="Script" uid="uid://bc3evps5y7fow" path="res://Characters/Player/Player.gd" id="1_j341n"]
+[ext_resource type="Texture2D" uid="uid://busafwd1mydla" path="res://Sprites/Player/TestPlayerSprite.png" id="2_cue0d"]
+
+[sub_resource type="Animation" id="Animation_bqsbk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_xf5fp"]
+resource_name = "Idle"
+step = 0.16666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4604617, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -10), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_osktb"]
+_data = {
+&"RESET": SubResource("Animation_bqsbk"),
+&"idle": SubResource("Animation_xf5fp")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j341n"]
+radius = 17.0
+height = 94.0
+
+[node name="Player" type="CharacterBody2D" unique_id=1594706307]
+script = ExtResource("1_j341n")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=453597281]
+texture = ExtResource("2_cue0d")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=29514311]
+libraries/ = SubResource("AnimationLibrary_osktb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1185714424]
+shape = SubResource("CapsuleShape2D_j341n")
