@@ -1,14 +1,15 @@
 [gd_scene format=3 uid="uid://bniqj6b5li5cy"]
 
 [ext_resource type="Script" uid="uid://bc3evps5y7fow" path="res://Characters/Player/Player.gd" id="1_j341n"]
-[ext_resource type="Texture2D" uid="uid://busafwd1mydla" path="res://Sprites/Player/TestPlayerSprite.png" id="2_cue0d"]
+[ext_resource type="Texture2D" uid="uid://lrlhdhx41jch" path="res://Vendor/FreeKnight_v1/Colour2/Outline/120x80_PNGSheets/_Idle.png" id="2_j341n"]
 
 [sub_resource type="Animation" id="Animation_bqsbk"]
 length = 0.001
+step = 0.06666667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -24,14 +25,14 @@ step = 0.16666667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4604617, 1),
+"times": PackedFloat32Array(0, 0.4, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, -10), Vector2(0, 0)]
+"values": [Vector2(0, 0), Vector2(0, -23), Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_osktb"]
@@ -48,11 +49,14 @@ height = 94.0
 script = ExtResource("1_j341n")
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=453597281]
-texture = ExtResource("2_cue0d")
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=29514311]
 libraries/ = SubResource("AnimationLibrary_osktb")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=453597281]
+position = Vector2(12, -63.999996)
+scale = Vector2(2.8994792, 2.9117186)
+texture = ExtResource("2_j341n")
+hframes = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1185714424]
 shape = SubResource("CapsuleShape2D_j341n")
